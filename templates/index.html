@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <title>Portafolio</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="header__nav main-nav">
+        <ul class="main-nav__list main-list">
+          <li class="main-list__item list-item">
+            <a class="list-item__link" href="#home">HOME</a>
+          </li>
+          <li class="main-list__item list-item">
+            <a class="list-item__link" href="#about">ABOUT</a>
+          </li>
+          <li class="main-list__item list-item">
+            <a class="list-item__link" href="#skills">MY SKILLS</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main">
+      <!-- Vista previa -->
+      <section class="main__home home" id="home">
+        <h1 class="home__title">Gianina Urzola</h1>
+        <p class="home__subtitle">WEB-DEVELOPER, PYTHON PROGRAMMER, CROCHETER, MUSIC</p>
+      </section>
+      <!-- Acerca de mí -->
+      <section class="main__about about" id="about">
+        <h2 class="about__title">ABOUT ME</h2>
+        <div class="about__info info-block">
+          <p class="info-block__text">
+           Me gusta programmar, hacer crochet y escuchar musica.
+           He adquirido las abilidades de programmar con python, html y css.
+           Tambien me gusta leer novelas de misterio, mi autora favorita es Agatha Christie.
+          </p>
+          <img
+            class="info-block__img"
+            src= "https://w7.pngwing.com/pngs/573/455/png-transparent-music-material-cartoons-listen-to-music-material-cartoons-thumbnail.png" 
+            alt="me"
+            width="250"
+            height="250"
+          />
+        </div>
+      </section>
+      <!-- Sección de competencias -->
+      <section class="main__skills skills" id="skills">
+        <h2 class="skills__title">MY SKILLS</h2>
+        <form action="/" method="POST">
+          <ul class="skills__list skills-list">
+            <li class="skills-list__skill skill">
+              <img
+                class="skill__img"
+                src="../static/img/python.png"
+                alt="python"
+                width="150"
+                height="150"
+              />
+              <span class="skill__info">Skill info</span>
+              <input class="skill__button" type="submit" name="button_python" value="SHOW PROJECT">
+            </li>
+            <li class="skills-list__skill skill">
+              <img
+                class="skill__img"
+                src="../static/img/discord.png"
+                alt="discord"
+                width="150"
+                height="150"
+              />
+              <span class="skill__info">Skill info</span>
+              <input class="skill__button" type="submit" name="button_discord" value="SHOW PROJECT">
+            </li>
+            <li class="skills-list__skill skill">
+              <img
+                class="skill__img"
+                src="../static/img/html.png"
+                alt="html"
+                width="150"
+                height="150"
+              />
+              <span class="skill__info">Skill info</span>
+              <input class="skill__button" type="submit" name="button_html" value="SHOW PROJECT">
+            </li>
+            <li class="skills-list__skill skill">
+              <img
+                class="skill__img"
+                src="../static/img/db.webp"
+                alt="SQL"
+                width="150"
+                height="150"
+              />
+              <span class="skill__info">Skill info</span>
+              <input class="skill__button" type="submit" name="button_db" value="SHOW PROJECT">
+            </li>
+          </ul>
+        </form>
+        {% if button_python%}
+          <div class="skills__project project" id="project">
+              <img class="project__img" src="../static/img/python-project.png" alt="project" width="500">
+              <a class="project__link" href="">Abierto en GitHub</a>
+          </div>
+        {% endif %}
+        {% if button_discord%}
+          <div class="skills__project project" id="project">
+              <img class="project__img" src="https://yt3.googleusercontent.com/FNtm76qzyhrIO0ryxNjs3hvnLpJuy3gZf7Jfyn7oesz8UaLRXJzcoiJqz7vIgZx6MviOFIIDMQ=s900-c-k-c0x00ffffff-no-rj" alt="project" width="500">
+              <a class="project__link" href="">Abierto en GitHub</a>
+          </div>
+        {% endif %}
+        {% if button_html%}
+          <div class="skills__project project" id="project">
+              <img class="project__img" src="https://www.cnet.com/a/img/resize/b9b09bd80b3129a6a5da79d9bd17487b977c9677/hub/2014/10/27/40194e6e-2544-419e-a340-f7c17b2e83c5/html5-wow-image-w3c.jpg?auto=webp&width=768" alt="project" width="500">
+              <a class="project__link" href="">Abierto en GitHub</a>
+          </div>
+        {% endif %}
+        {% if button_db%}
+          <div class="skills__project project" id="project">
+              <img class="project__img" src="data:image/png;base64,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" alt="project" width="500">
+              <a class="project__link" href="">Abierto en GitHub</a>
+          </div>
+        {% endif %}
+      </section>
+      <!-- Formulario de contacto -->
+      <section class="main__feedback feedback" id="feedback">
+        <h2 class="feedback__title">FEEDBACK</h2>
+        <form action="{{url_for('submit_form')}}" method="POST" class="feedback__form form">
+          <label for="email">
+            <input type="email" class="form__input" name="email" id="email" placeholder="Введите E-mail" required>
+          </label>
+          <label for="text">
+            <textarea name="text" class="form__input" id="text" cols="70" rows="10" required placeholder="Comment"></textarea>
+          </label>
+          <button class="form__button" type="submit">SEND</button>
+        </form>
+      </section>
+    </main>
+    <!-- Pie de página con enlaces a redes sociales -->
+    <footer>
+
+    </footer>
+  </body>
+</html>
